@@ -1,0 +1,11 @@
+jobs:
+          snyk:
+            runs-on: ubuntu-latest
+            steps:
+              - uses: actions/checkout@v4
+              - name: Run Snyk test
+                uses: snyk/actions/setup@master
+                with:
+                  command: test
+                env:
+                  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
